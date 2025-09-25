@@ -3,10 +3,8 @@
     <head>
         <meta charset='UTF-8'>
         <title>내 프로필을 소개합니다</title>
-        <style>
-            h1 {color: #abc};
-            p {font-family: -apple-system, sans-serif; font-size:25px; line-height: 2.0;}
-        </style>
+        <link rel = 'stylesheet' href = 'style.css'>
+        
     </head>
     <body>
         <h1> 이윤호 YUNHO LEE</h1>
@@ -18,9 +16,17 @@
             style 조금. margin padding같은 것들
             그리고 &lta href>같은거 쓰는 법.
             &lt는 그냥 쓰면 코드로 인식되니까 &amp;lt로 쓰면 대요 
+            &ltlink&gt는 자동으로 여기 있는 외부 파일을 열어주는 태그입니다
+            하이퍼링크같은 걸 걸려면, 클릭했을때 넘어가는 &lta&gt같은 걸 써주면 됩니다 
+            &lta href = '링크주소'&gt하고 그 사이에 링크걸 문자를 쓰는거죠
+
+            근데 내가 만든 웹사이트를 어떤 사람이 눌렀을때 어떻게 될까요
+            사실 웹사이트라는건 그사람이 만들어놓은 index.html을 받아와서 내 화면에 보여주느건데요. 
+            그럼 html을 달라고 요청을 해야겠죠 내가 naver.com이라는 주소를 치면 dns에서 그 주소를 ip주소(숫자로 된)로 변환해서
+            그 ip주소가 있는 서버에다가 요청을 보내면 이 웹서버라는 곳에 프로그램이 있는데 그게 html을 돌려준다고 합니다
+            그걸 받아와서 내 화면에 html 해석해서 띄우는 거라는걸 배웠스빈다
 
         </p>
         <a href ='https://www.youtube.com/watch?v=HkZ8BitJhvc&pp=ygUOYXJ1YXJpYW4gZGFuY2U%3D'>제가 가장 좋아하는 노래 중 하나에요</a>
     </body>
 </html>
-    
