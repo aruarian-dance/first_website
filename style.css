@@ -1,4 +1,18 @@
 body {
-    background-color: #BFDBFE;
+    background-color: skyblue;
     font-family: ui-sans-serif
+}
+
+h1 {
+    color:blue;
+    text-align:center;
+}
+p {
+    font-size: 18px;
+    color:gray;
+    line-height: 2.0;
+}
+a {
+    color:green;
+    text-decoration: none;
 }
