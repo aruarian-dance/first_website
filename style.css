@@ -16,3 +16,10 @@ a {
     color:green;
     text-decoration: none;
 }
+card {
+    background: lightgoldenrodyellow;
+    border: 1px outset #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;    
+}
