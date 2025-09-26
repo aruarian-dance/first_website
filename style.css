@@ -19,7 +19,7 @@ a {
 card {
     background: lightgoldenrodyellow;
     border: 1px outset #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
     padding: 15px;
     width: 200px;    
 }
