@@ -16,7 +16,7 @@ a {
     color:green;
     text-decoration: none;
 }
-card {
+.card {
     background: lightgoldenrodyellow;
     border: 1px outset #ddd;
     border-radius: 6px;
