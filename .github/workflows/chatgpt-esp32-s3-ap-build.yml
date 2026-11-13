@@ -1,8 +1,9 @@
-name: Build ESP32-S3 AP firmware
+name: Build ESP32-S3 AP with USB telemetry
 on:
   push:
     branches:
       - chatgpt-esp32s3-ap-build-20261113
+      - chatgpt-esp32s3-telemetry-20261114
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,6 +14,11 @@ jobs:
           esp_idf_version: v5.5.1
           target: esp32s3
           path: esp32_s3_ap
+      - name: Verify console and flash settings
+        run: |
+          grep -qx 'CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y' esp32_s3_ap/sdkconfig
+          grep -qx 'CONFIG_IDF_TARGET="esp32s3"' esp32_s3_ap/sdkconfig
+          grep -qx 'CONFIG_ESPTOOLPY_FLASHSIZE="16MB"' esp32_s3_ap/sdkconfig
       - name: Bundle flash binaries
         run: |
           mkdir -p firmware
@@ -22,5 +28,5 @@ jobs:
           cp esp32_s3_ap/build/flasher_args.json firmware/
       - uses: actions/upload-artifact@v4
         with:
-          name: esp32-s3-ap-bin-files
+          name: esp32-s3-ap-usb-tcp-telemetry-bin
           path: firmware/
