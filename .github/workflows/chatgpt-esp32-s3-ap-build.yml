@@ -1,0 +1,26 @@
+name: Build ESP32-S3 AP firmware
+on:
+  push:
+    branches:
+      - chatgpt-esp32s3-ap-build-20261113
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.5.1
+          target: esp32s3
+          path: esp32_s3_ap
+      - name: Bundle flash binaries
+        run: |
+          mkdir -p firmware
+          cp esp32_s3_ap/build/bootloader/bootloader.bin firmware/
+          cp esp32_s3_ap/build/partition_table/partition-table.bin firmware/
+          cp esp32_s3_ap/build/esp32_s3_ap.bin firmware/
+          cp esp32_s3_ap/build/flasher_args.json firmware/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: esp32-s3-ap-bin-files
+          path: firmware/
